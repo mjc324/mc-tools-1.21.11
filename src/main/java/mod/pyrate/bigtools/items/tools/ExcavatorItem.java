@@ -19,7 +19,7 @@ import net.neoforged.neoforge.common.ItemAbility;
 import java.util.function.Supplier;
 
 
-public class ExcavatorItem extends net.minecraft.world.item.ShovelItem
+public class ExcavatorItem extends net.minecraft.world.item.Item
 {
     private final Supplier<Item> myCrusher;
     private final Supplier<Item> myDigger;
@@ -28,7 +28,7 @@ public class ExcavatorItem extends net.minecraft.world.item.ShovelItem
     public ExcavatorItem(ToolMaterial tier, TagKey<Block> tagBlock, Properties props,
                          Supplier<Item> crusher, Supplier<Item> digger)
     {
-        super(tier, tier.attackDamageBonus(), tier.speed(), props);
+        super(props.tool(tier, tagBlock, tier.attackDamageBonus(), tier.speed(), 0.0f));
         myCrusher = crusher;
         myDigger = digger;
         myTags = tagBlock;

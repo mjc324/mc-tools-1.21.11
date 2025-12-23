@@ -22,7 +22,7 @@ public class LoggerItem extends net.minecraft.world.item.AxeItem
 {
     public LoggerItem(ToolMaterial tier, TagKey<Block> tagBlock, Item.Properties props)
     {
-        super(tier, tier.attackDamageBonus(), tier.speed(), props);
+        super(tier, tier.attackDamageBonus(), tier.speed(), props.axe(tier, tier.attackDamageBonus(), tier.speed()));
     }
 
     @Override

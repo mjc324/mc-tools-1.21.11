@@ -6,6 +6,7 @@ package mod.pyrate.bigtools.items.tools;
 
 import mod.pyrate.bigtools.functions.MiningFunctions;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -19,18 +20,18 @@ import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 
 
-public class CrusherItem extends net.minecraft.world.item.ShovelItem
+public class CrusherItem extends net.minecraft.world.item.Item
 {
     public CrusherItem(ToolMaterial tier, TagKey<Block> tagBlock, Item.Properties props)
     {
-        super(tier, tier.attackDamageBonus(), tier.speed(), props);
+        super(props.pickaxe(tier, tier.attackDamageBonus(), tier.speed()));
     }
 
-    @Override
-    public boolean canPerformAction(ItemStack stack, ItemAbility toolAction)
-    {
-        return false; //ItemAbilities.DEFAULT_PICKAXE_ACTIONS.contains(toolAction);
-    }
+    //@Override
+    //public boolean canPerformAction(ItemStack stack, ItemAbility toolAction)
+    //{
+    //    return super.canPerformAction(stack, toolAction);
+    //}
 
     @Override
     public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entity)

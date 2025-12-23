@@ -23,7 +23,7 @@ public class DiggerItem extends net.minecraft.world.item.ShovelItem
 {
     public DiggerItem(ToolMaterial tier, TagKey<Block> tagBlock, Item.Properties props)
     {
-        super(tier, tier.attackDamageBonus(), tier.speed(), props);
+        super(tier, tier.attackDamageBonus(), tier.speed(), props.shovel(tier, tier.attackDamageBonus(), tier.speed()));
     }
     @Override
     public boolean canPerformAction(ItemStack stack, ItemAbility toolAction) {
