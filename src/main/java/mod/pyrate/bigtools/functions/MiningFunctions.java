@@ -162,10 +162,9 @@ public class MiningFunctions
         }
         if (!isValid)
         {
-            if (itm instanceof net.minecraft.world.item.ShovelItem)
+            if (itm instanceof net.minecraft.world.item.Item)
             {
-                net.minecraft.world.item.ShovelItem digItem = (net.minecraft.world.item.ShovelItem)itm;
-                isValid |= digItem.isCorrectToolForDrops(stack, state);
+                isValid |= ((Item)itm).isCorrectToolForDrops(stack, state);
             }
         }
 
